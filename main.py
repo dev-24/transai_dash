@@ -164,14 +164,14 @@ app.layout = html.Div(
 					    ),
 					    html.H5(
 		                    '',
-		                    id='criterion-text'
-		                    
+		                    id='criterion-text',
+		                    style={'margin-bottom:': '10'}
 		                ),
 					    dcc.Graph(id='graph-with-popularity'
                         ),
                     ],
                     className='five columns',
-                    style={'margin-top': '50'}
+                    style={'margin-top': '50', 'margin-left':'30'}
                 ),
             ],
             className='row'
@@ -316,7 +316,7 @@ def update_pie(selected_year,selected_criterion):
 @app.callback(Output('criterion-text', 'children'),
               [Input('most-popular-dropdown', 'value')])
 def update_year_text(criterion):
-    return "Most Popular {} by Year in terms of Sales".format(criterion)
+    return "Most Popular {} by Year by Sales".format(criterion)
 
 	
 @app.callback(Output('year-text', 'children'),
