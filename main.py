@@ -19,7 +19,7 @@ dm = DataManager('./vgsales.csv')
 year_options={}
 for year in dm.data['Year'].unique():
 	if not np.isnan(year):
-		year_options[int(year)]={'label':int(year), 'style':{'font-size':'10px', 'margin':'10'}}
+		year_options[int(year)]={'label':int(year), 'style':{'font-size':'10px','margin-left':'10'}}
 
 app = dash.Dash(__name__)
 app.css.append_css({'external_url': 'https://cdn.rawgit.com/plotly/dash-app-stylesheets/2d266c578d2a6e8850ebce48fdb52759b2aef506/stylesheet-oil-and-gas.css'})  # noqa: E501
@@ -146,7 +146,7 @@ app.layout = html.Div(
 							)
                         )
                     ],
-                    className='five columns',
+                    className='seven columns',
                     style={'margin-top': '50'}
                 ),
                 
@@ -170,8 +170,8 @@ app.layout = html.Div(
 					    dcc.Graph(id='graph-with-popularity'
                         ),
                     ],
-                    className='six columns',
-                    style={'margin-top': '50','margin-left':'100'}
+                    className='five columns',
+                    style={'margin-top': '50'}
                 ),
             ],
             className='row'
@@ -279,7 +279,12 @@ def update_pie(selected_year,selected_criterion):
 				values = values,
 				name= 'Region',
 				textinfo ='none'
-			)]
+			)],
+			'layout': go.Layout(
+				
+				
+
+			)
 		}
 	else:
 		dm.group_sales_by(column_name=selected_criterion)
@@ -292,7 +297,20 @@ def update_pie(selected_year,selected_criterion):
 				values = values,
 				name= selected_criterion,
 				textinfo ='none'
-			)]
+			)],
+			'layout': go.Layout(
+				
+				legend=dict(x=1, y=1.2, font=dict(
+			            family='sans-serif',
+			            size=8,
+			            color='#000'
+			        	),
+				),
+				height=400,
+				width=600,
+				margin={'l': 50, 'b': 50, 't': 50, 'r': 50},
+				
+			)
 		}
 
 @app.callback(Output('criterion-text', 'children'),
