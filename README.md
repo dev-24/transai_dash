@@ -1,11 +1,34 @@
-**Dash Oil and Gas Demo App**
+Features:
 
-This is a demo of the Dash interactive Python framework developed by [Plotly](https://plot.ly/).
+Task 1:
 
-Dash abstracts away all of the technologies and protocols required to build an interactive web-based application and is a simple and effective way to bind a user interface around your Python code.
+Sales data by Region
+Time Range Slider
+Random Subset selection for Regions, with color coded legend
+Hover Text
 
-To learn more check out our [documentation](https://plot.ly/dash).
+Task 2:
 
-The following are screenshots for the app in this repo:
+Sales data by Region, Platform, Publisher, Genre
+Time Range Slider (Same slider controls both bar chart and line chart)
+Color Coded legend
+Hover Text
 
-![Alt desc](https://cdn.rawgit.com/plotly/dash-oil-and-gas-demo/master/screenshots/Screenshot1.png?token=AK-nZHRzEppiigN44Y5izDQcSc35cqIiks5ZUq4zwA%3D%3D)
+Task 3 and others combined:
+
+Find which Publisher/Platform/Genre was most popular in terms of sales in each year 
+Bubble chart where size denotes a third dimension (amount of sales)
+Hover Text
+
+
+How to run:
+
+python3 main.py
+
+OR 
+
+python main.py
+
+
+http://127.0.0.1:5000/
+
